@@ -1,0 +1,14 @@
+﻿<h1>Home Page</h1>
+@* Simple access quick checks *@
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>Hello @ViewBag.Username</h1>
+    <a asp-controller="Home" asp-action="Logout">Logout</a>
+}
+else
+{
+    <h1>User is NOT authenticated</h1>
+    <a asp-controller="Home" asp-action="Login">Login</a>
+}
+<br />
+<a asp-controller="Home" asp-action="Secret">Show Secret Page</a>
